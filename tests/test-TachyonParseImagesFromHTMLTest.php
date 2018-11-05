@@ -1,6 +1,6 @@
 <?php 
 
-class TachyonTest extends WP_UnitTestCase
+class TachyonParseImagesFromHTMLTest extends WP_UnitTestCase
 {
     public function setUp()
     {
@@ -14,12 +14,12 @@ class TachyonTest extends WP_UnitTestCase
         $this->content .= '</body></html>';
     }
 
-    public function test_parse_images_from_html_empty() {
+    public function test_empty_result() {
         $this->parsed_images = $this->class_instance::parse_images_from_html( "" );
         $this->assertEquals([], $this->parsed_images);
     }
 
-    public function test_parse_images_from_html_discovers_all_images()
+    public function test_full_match()
     {
         $this->parsed_images = $this->class_instance::parse_images_from_html( $this->content );
 
@@ -31,7 +31,7 @@ class TachyonTest extends WP_UnitTestCase
         $this->assertEquals($expected, $this->parsed_images[0]);
     }
 
-    public function test_parse_images_from_html_returns_link_urls() {
+    public function test_parses_link_urls() {
         $this->parsed_images = $this->class_instance::parse_images_from_html( $this->content );
 
         $expected = array(
@@ -42,7 +42,7 @@ class TachyonTest extends WP_UnitTestCase
         $this->assertEquals($expected, $this->parsed_images['link_url']);      
     }
 
-    public function test_parse_images_from_html_returns_img_tags() {
+    public function test_parses_img_tags() {
         $this->parsed_images = $this->class_instance::parse_images_from_html( $this->content );
 
         $expected = array(
@@ -53,7 +53,7 @@ class TachyonTest extends WP_UnitTestCase
         $this->assertEquals($expected, $this->parsed_images['img_tag']);      
     }
 
-    public function test_parse_images_from_html_returns_img_url() {
+    public function test_parses_img_url() {
         $this->parsed_images = $this->class_instance::parse_images_from_html( $this->content );
 
         $expected = array(
