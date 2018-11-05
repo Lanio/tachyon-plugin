@@ -31,3 +31,15 @@ tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
 // Start up the WP testing environment.
 require $_tests_dir . '/includes/bootstrap.php';
+
+function fixture($path = "") {
+	if(empty($path)) {
+		return false;
+	}
+
+	ob_start();
+	include(dirname( dirname( __FILE__ ) ) . '/tests/fixtures/' . $path);
+	$fixture = ob_get_contents();
+	ob_end_clean();
+	return $fixture;
+}

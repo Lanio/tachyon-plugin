@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <p>
+            <a href="/images/image1.jpg">
+                <img src="/images/image1.jpg" />
+                <img src="/images/image2-200x250.jpg" />
+                <a href="/"><img src="/images/image3-150x150.png" /></a>
+            </a>
+        </p>
+    </body>
+</html>
