@@ -37,8 +37,6 @@ class Tests_Tachyon_FilterTheContent extends WP_UnitTestCase
         $this->assertEquals($result, $this->content);
     }
 
-
-
     # TODO
     # test_tachyon_skip_image
     # test_automattic lazy loading
@@ -50,7 +48,3 @@ class Tests_Tachyon_FilterTheContent extends WP_UnitTestCase
     # filter_image_downsize
     # filter_srcset_array   
 }
-
-# TestCases
-# test filters
-# tachyon_url
