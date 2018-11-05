@@ -1,6 +1,6 @@
 <?php 
 
-class TachyonParseImagesFromHTMLTest extends WP_UnitTestCase
+class Tests_Tachyon_ParseImagesFromHTML extends WP_UnitTestCase
 {
     public function setUp()
     {
